@@ -1,0 +1,5 @@
+---
+- name: Restart pagekite
+  ansible.builtin.service:
+    name: pagekite
+    state: restarted

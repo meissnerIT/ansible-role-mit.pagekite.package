@@ -1,0 +1,19 @@
+---
+- name: Update 10_account.rc
+  ansible.builtin.template:
+    src: 10_account.rc
+    dest: /etc/pagekite.d/10_account.rc
+    mode: "0600"
+  notify: Restart pagekite
+- name: Update 20_frontends.rc
+  ansible.builtin.template:
+    src: 20_frontends.rc
+    dest: /etc/pagekite.d/
+    mode: "0644"
+  notify: Restart pagekite
+- name: Update 80_sshd.rc
+  ansible.builtin.copy:
+    src: 80_sshd.rc
+    dest: /etc/pagekite.d/
+    mode: "0644"
+  notify: Restart pagekite

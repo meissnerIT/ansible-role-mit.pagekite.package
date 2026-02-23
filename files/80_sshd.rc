@@ -1,0 +1,1 @@
+service_on = raw/22:@kitename : localhost:22 : @kitesecret
